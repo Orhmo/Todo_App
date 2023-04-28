@@ -4,16 +4,16 @@ import { TodosContext } from '../../todo-context';
 import './todo-list.scss';
 
 export const TodoList = () => {
-  const { todos, setTodos } = React.useContext(TodosContext);
+  const { todos, addTodos } = React.useContext(TodosContext);
 
   const handleDelete = (id) => {
     // Fix an ability to delete task
-    setTodos(todos.filter((todo) => todo.id !== id));
+    addTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const toggleCheck = (id) => {
     // Fix an ability to toggle task
-    setTodos(
+    addTodos(
       todos.map((todo) => {
         if (todo.id === id) {
           return {
