@@ -4,26 +4,26 @@ import { TodosContext } from '../../todo-context';
 import './todo-list.scss';
 
 export const TodoList = () => {
-  const { todos, addTodos } = React.useContext(TodosContext);
+  const { todos, setTodos } = React.useContext(TodosContext);
 
   const handleDelete = (id) => {
-    // Fix an ability to delete task
-    addTodos(todos.filter((todo) => todo.id !== id));
+    // Filter out the deleted todo item from the todos array
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
   };
 
   const toggleCheck = (id) => {
-    // Fix an ability to toggle task
-    addTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            checked: !todo.checked,
-          };
-        }
-        return todo;
-      }),
-    );
+    // Update the checked property of the corresponding todo item
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          checked: !todo.checked,
+        };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
   };
 
   const handleKeyUp = (e, id) => {
