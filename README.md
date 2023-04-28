@@ -1,6 +1,6 @@
 # TODO application
 
-This application was intentionally broken, there are six critical issues that you have to fix:
+This application was intentionally broken,and all six critical issues have been fixed:
 
 1. Fix an ability to display all tasks.
 2. Fix a layout, checkboxes should be listed in a column.
@@ -8,6 +8,8 @@ This application was intentionally broken, there are six critical issues that yo
 4. Fix an ability to toggle a task.
 5. Fix an ability to delete a task.
 6. Fix an ability to count completed tasks.
+
+## The Netlify link shows a production output of the fixed code
 
 ## Available Scripts
 
