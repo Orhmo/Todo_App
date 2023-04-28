@@ -7,13 +7,14 @@ export const TodoForm = () => {
   const [task, setTask] = React.useState('');
 
   const handleAddTodo = () => {
-    if (task.trim() !== '') { // only add task if it's not an empty string
+    if (task.trim() !== '') {
       const newTodo = {
-        id: new Date().getTime(), // use timestamp as a unique ID
-        task: task.trim(),
+        id: todos.length,
+        label: task.trim(),
+        checked: false,
       };
-      setTodos([...todos, newTodo]); // add new todo to the list of todos
-      setTask(''); // clear the input field
+      setTodos([...todos, newTodo]);
+      setTask('');
     }
   };
 
