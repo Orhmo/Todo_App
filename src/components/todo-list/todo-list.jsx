@@ -32,6 +32,8 @@ export const TodoList = () => {
     }
   };
 
+  const allChecked = todos.every((todo) => todo.checked);
+
   return (
     <div className="todo-list">
       <span className="todo-list-title">Things to do:</span>
@@ -47,6 +49,7 @@ export const TodoList = () => {
               onDelete={() => handleDelete(todoItem.id)}
             />
           ))}
+          {allChecked && <div className="no-todos">Looks like you&apos;re absolutely free today!</div>}
         </div>
       ) : (
         <div className="no-todos">Looks like you&apos;re absolutely free today!</div>
