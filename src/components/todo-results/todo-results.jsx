@@ -7,9 +7,10 @@ export const TodoResults = () => {
 
   const calculateChecked = () => {
     // Fix an ability to calculate completed tasks
-    const completedTasks = todos.reduce((acc, todo) => (
-      todo.checked ? acc + 1 : acc
+    const completedTasks = todos.reduce((task, todo) => (
+      todo.checked ? task + 1 : task
     ), 0);
+
     return completedTasks;
   };
 

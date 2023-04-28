@@ -49,7 +49,7 @@ export const TodoList = () => {
           ))}
         </div>
       ) : (
-        <div className="no-todos">Looks like you&apos;re absolutely free today!!</div>
+        <div className="no-todos">Looks like you&apos;re absolutely free today!</div>
       )}
     </div>
   );
